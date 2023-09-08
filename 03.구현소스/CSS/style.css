@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 외부CSS합치기 */
+@import url(./common.css);
+@import url(./core.css);
+
+
+.style_tit{
+  padding-top: 160px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 메인 타이틀 넣기 */
+.location{
+  display: flex;
+  padding-left: 50px;
+  font-size: 1.2rem;
+}
+/* 첫번째 li (HOME /)에 컬러넣기 */
+.location li:first-child{
+  color: rgb(114, 114, 114);
+}
+.item_tit{
+  padding: 20px 0 50px;
+  text-align: center;
+  font-size: 2.9rem;
+  font-weight: 500;
+}
+/* 메인 그리드영역 */
+.gridbx {
+  display: grid;
+  padding: 0 50px 100px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 40px;
+}
+/* 스크롤 등장액션 클래스 */
+.item{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+/* 등장클래스+.on */
+.item.on{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* 스타일 그리드영역 */
+/* 스크롤 등장액션 클래스 */
+
+.sitem{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  border-radius: 5%;
+}
+/* 등장클래스+.on */
+.sitem.on{
+  transform: translateY(0);
+  opacity: 1;
+}
+.style_box {
+  display: grid;
+  max-width: 1200px;
+  padding: 0 50px 100px;
+  margin: 0 auto;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px 40px;
+  /* overflow: hidden; */
+}
+/* 스타일 이미지 */
+.simg{
+  position: relative;
+  aspect-ratio: 230 / 350;
+  transition: .3s;
+}
+/* 스타일 공통이미지 */
+.simg img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .3s;
+}
+.simg.on{
+  transform: scale(1.1);
+}

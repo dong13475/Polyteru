@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/* 공통 핵심 CSS - core.css */
+
+/* 폰트어썸 CND */
+
+
+/* 웹폰트 CND */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&family=Open+Sans:wght@300&display=swap');
+
+/* 
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+/* 초기화 */
+html,body,h1,h2,ul,ol{
+  margin: 0;
+  padding: 0;
+}
+/* 글자크기 고정 */
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+}
+/* 바디 밑 모든요소에 한글,영문폰트 입히기 
+한글전용,영문전용 폰트로하면 자동으로 인식해서 적용됨! */
+body{
+  font-family: 'IBM Plex Sans KR','Open Sans', sans-serif;
+}
+ul,ol,li{
+  list-style: none;
+}
+
+
+/* a요소 리셋 */
+a{
+  color: #131313;
+  text-decoration: none;
+}
+
+
+/* 이미지 리셋 */
+img {
+  border: none;
+  /* 이미지 링크시 서버에서 볼때 파란색 자동보더 없애기 */
+  vertical-align: bottom;
+  /* 박스 이미지 하단간극 없애기(약4px)
+    값으로 top, middle등 도 효과있음! */
+}
+
+/* 중앙 속박스 */
+.ibx{
+  /* max-width: 1300px; */
+  margin: 0 auto;
+}
+
+/* 배경이미지 설명넣기 숨기기 클래스
+IR(Image Replacement) */
+.ir{
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+

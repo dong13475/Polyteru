@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 폰트어썸 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="./images/shortcut.ico" type="image/x-icon" />
+    <!-- 외부 CSS 넣기 -->
+    <link rel="stylesheet" href="./CSS/item.css" />
+    <!-- 미디어 쿼리 넣기 -->
+    <link rel="stylesheet" href="./CSS/media.css" />
+    <!-- 부드러운 스크롤 JS -->
+    <script src="./JS/smoothScroll20.js"></script>
+    <!-- 공통 JS -->
+    <script src="./JS/common.js"></script>
+    <!-- 링크시스템 JS -->
+    <script src="./JS/linksys.js"></script>
+    <!-- 데이터 JS -->
+    <script src="./JS/allData.js"></script>
+    <!-- 메인 JS 넣기 -->
+    <script src="./JS/item.js"></script>
+    <title>ITEM | POLYTERU</title>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <div class="overlay"></div>
+    <div id="top">
+      <header class="toP ibxTop">
+        <!-- 탑메뉴 
+        max-width값을 주기위해 제일 상단으로 옮김 -->
+        <div class="tmenu">
+          <ul>
+            <li>
+              <a href="" class="fa-solid fa-magnifying-glass">
+                <span class="ir">검색창</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="fa-regular fa-user">
+                <span class="ir">마이페이지</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="fa-regular fa-heart">
+                <span class="ir">찜목록</span>
+              </a>
+            </li>
+            <li>
+              <a href="" class="fa-solid fa-cart-shopping">
+                <span class="ir">쇼핑카트</span>
+              </a>
+            </li>
+            <li>
+              <!-- 탑메뉴 햄버거 버튼 -->
+              <div class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 상단로고 -->
+        <h1 class="logo">
+          <a href="#" title="메인페이지">
+            <img src="./images/polyterulogo.png" alt="메인로고" />
+          </a>
+        </h1>
+        <!-- 상단네비 -->
+        <div id="gnb">
+          <!-- gnb 박스 영역 -->
+          <div class="gnb_bx">
+            <nav class="gnb">
+              <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li>
+                  <a href="#">ITEM</a>
+                  <div class="smenu">
+                    <ol>
+                      <li><a href="#">ALL</a></li>
+                      <li><a href="#">OUTER</a></li>
+                      <li><a href="#">TOP</a></li>
+                      <li><a href="#">BOTTOM</a></li>
+                      <li><a href="#">ACC</a></li>
+                    </ol>
+                  </div>
+                </li>
+                <li><a href="#">STYLE</a></li>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+              </ul>
+            </nav>
+            <!-- 어카운트 박스 -->
+            <div class="account">
+              <a href="" class="fa-regular fa-user"></a>
+              <div class="account_txt">ACCOUNT</div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <main class="cont ibx">
+      <div class="main_top">
+        <!-- 메인타이틀 넣기 박스 -->
+        <div class="sub_title">
+          
+        </div>
+
+        <!-- 그리드 섹션 -->
+        <section>
+          <div class="gridbx"></div>
+        </section>
+        <!-- 상단이동버튼 -->
+        <div class="move_top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </main>
+    <!-- 3. 하단영역 -->
+    <div id="info">
+      <footer class="info ibx">
+        <div class="addbx">
+          <!-- 하단로고 -->
+          <div class="blogo">
+            <img src="./images/polyterulogo.png" alt="하단로고" />
+          </div>
+          <address>
+            상호: 주식회사 폴리테루 | 대표: 박윤하 | 개인정보관리책임자: 박윤하 | 이메일: office@polyteru.com <br />
+            주소: 301,3F, 89, Yeonmujang-gil, Seongdong-gu, Seoul, Republic of Korea |
+            <br />
+            사업자등록번호: 688-88-01923 | 통신판매: 2021-서울중구-2757 | 호스팅제공자: (주)식스샵 안전구매(에스크로)
+            서비스 가맹점
+            <br />
+            <div class="blink">
+              <a href="">이용약관</a>
+              <a href="">개인정보처리방침</a>
+              <a href="">사업자정보확인</a>
+            </div>
+          </address>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

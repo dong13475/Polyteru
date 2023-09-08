@@ -1,0 +1,367 @@
+@charset "UTF-8";
+
+/* 메인페이지 미디어쿼리 - media.css */
+
+/* 1200px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+  /*************************** 상단영역 ***************************/
+  /* 상단탑메뉴 */
+  .tmenu ul {
+    right: 8vw;
+  }
+  /* 탑메뉴 햄버거 버튼 */
+  .tmenu ul .ham {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+  }
+  /***************** GNB영역 *****************/
+  /* gnb박스 영역 */
+  .gnb_bx {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* width: min(300px,40vw); */
+    width: 0;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgb(0, 0, 0);
+    /* outline: 2px dotted red; */
+    transition: width 0.5s ease-in-out;
+  }
+  body.on::after {
+    content: "";
+    position: fixed;
+    /* visibility: hidden; */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.432);
+    transition: visibility 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  .gnb_bx.on {
+    width: 300px;
+  }
+  .gnb_bx.on .account {
+    visibility: visible;
+  }
+
+  .gnb > ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: 0 45px;
+    transition: none;
+    padding: 200px 40px;
+  }
+
+  .gnb > ul > li > a {
+    color: #000;
+    font-size: 1.8rem;
+    line-height: 30px;
+    text-shadow: none;
+  }
+  .gnb:hover ul {
+    /* background-color: #fff; */
+    box-shadow: none;
+  }
+  .gnb:hover ul > li > a {
+    text-shadow: none;
+    /* transition: .2s; */
+  }
+  /* 서브메뉴 */
+  .smenu {
+    position: relative;
+    top: 0;
+    left: 37%;
+    width: 300px;
+    /* transform: translateX(-63%); */
+    box-shadow: none;
+    /* outline: 1px dotted red; */
+  }
+  .smenu ol {
+    width: 100%;
+    position: absolute;
+  }
+  .smenu > ol >  li{
+    text-align: left;
+    padding-left: 45px;
+    font-size: 1.5rem;
+  }
+
+  .gnb > ul > li.on::before {
+    display: none;
+  }
+  .gnb > ul > li.on2::before {
+    display: none;
+  }
+
+  /* 어카운트 박스 */
+  .account {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    /* 크기 */
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid #cecece;
+    line-height: 60px;
+  }
+  .account a {
+    position: absolute;
+    font-size: 1.7rem;
+    padding: 0 30px;
+    top: 50%;
+    transform: translateY(-52%);
+  }
+  .account_txt {
+    font-size: 1.7rem;
+    padding-left: 60px;
+  }
+
+  /************************** 메인영역 **************************/
+
+  /* 메인 그리드영역 */
+  .gridbx {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .style_box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* 1200px 사이즈 이하 미디어쿼리 끝 */
+
+
+
+/* 800px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+  /* 메인 그리드 박스 */
+  .gridbx{
+    padding: 0 30px;
+    padding-bottom: 100px;
+    gap: 30px 25px;
+  }
+  /* 메인 스타일 박스 */
+  .grid_style {
+    padding: 0 30px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 40px;
+  }
+  
+  /* 푸터영역 */
+  .blogo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .addbx address {
+    padding-top: 80px;
+    font-size: 1.1rem;
+  }
+  /* 서브 스타일페이지  */
+  .style_box {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 20px 100px;
+    gap: 30px 25px;
+  } 
+}
+/* 800px 사이즈 이하 미디어쿼리 끝 */
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+  /* 상단영역 */
+  .tmenu ul {
+    visibility: hidden;
+  }
+  .ham {
+    top: 4vh;
+    right: 5vw;
+  }
+  .gnb_bx.on {
+    width: 250px;
+  }
+  
+  /* 메인영역 */
+  .gridbx {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    gap: 20px 25px;
+    padding-bottom: 100px;
+  }
+  
+  .item_section {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .button_bx {
+    padding: 30px 0 50px;
+}
+  /* 메인 스타일 박스 */
+  .grid_style {
+    gap: 20px 30px;
+}
+  .c_info{
+    padding: 0 50px 50px;
+  }
+  .c_info01 {
+    font-size: 1.1rem;
+}
+  .c_info02 {
+    font-size: 1.1rem;
+}
+  /* 푸터영역 */
+  /* .blogo {
+    left: 50%;
+    transform: translateX(-50%);
+  } */
+
+  .addbx address {
+    /* box-sizing: border-box; */
+    /* transform: translateY(70%); */
+    font-size: 1rem;
+    line-height: 15px;
+    /* padding: 0 20px; */
+  }
+  /* 서브 스타일페이지  */
+  .style_box {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px 100px;
+  } 
+
+  /******** itemdetail 페이지 미디어쿼리 ********/
+  
+
+  /* 전체 플렉스 박스 */
+  .item_list>ul{
+    flex-direction: column;
+  }
+
+/* 플렉스 섹션 1 */
+.sec1{
+  width: 100vw;
+  height: 500px;
+  /* width: 50vw; */
+}
+/* 섹션1 페이드 박스 */
+.stk_bx{
+  top: 0;
+  padding: 0;
+}
+/* 페이드 속박스 */
+.fade{
+  position: relative;
+  top: 0;
+}
+.fade li{
+  width: 300px;
+}
+
+
+/* 플렉스 섹션 2 */
+.sec2{
+  width: 100%;
+}
+
+/* 섹션 2 속박스 */
+.sec2_detail{
+  padding-left: 30px;
+}
+/* 아이템 제목 */
+.sec2_detail>h2{
+  padding-top: 10px;
+  font-size: 1.8rem;
+}
+
+/* 적립금 */
+.point{
+  gap: 80px;
+  padding: 5px 0;
+}
+.point li:first-child{
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.point li:last-child{
+  font-size: 1.2rem;
+  padding-top: 2px;
+}
+/* 배송비 */
+.shipping{
+  gap: 80px;
+  padding: 5px 0;
+}
+.shipping li:first-child{
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.shipping li:last-child{
+  font-size: 1.2rem;
+}
+/* 수량 조건 */
+.count{
+  gap: 64px;
+  padding: 5px 0;
+}
+.count li:first-child{
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.count li:last-child{
+  font-size: 1.2rem;
+}
+/* 사이즈 타이틀 */
+.sizetit{
+  font-size: 1.2rem;
+  padding: 10px 0;
+}
+/* 사이즈 선택박스 */
+.size_bx{
+  width: 150px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+/* 주문수량 */
+.scount{
+  gap: 100px;
+}
+.scount li:first-child{
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+.scount li:last-child{
+  font-size: 1.2rem;
+}
+/* 총 상품 금액 */
+.total{
+  gap: 85px;
+}
+.total li:first-child{
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+.total li:last-child{
+  font-size: 1.2rem;
+}
+/* 구매 / 장바구니 버튼 */
+.buy{
+  font-size: 1.5rem;
+}
+
+/* 상품 설명 텍스트 */
+/* 상품 상세 이미지 */
+
+.mimg{
+  width: 300px;
+  padding-bottom: 100px;
+}
+
+/* 상단이동버튼 모비일 화면에서 없애기 */
+.move_top{
+  display: none;
+}
+}
+/* 500px 사이즈 이하 미디어쿼리 끝 */

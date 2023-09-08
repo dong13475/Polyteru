@@ -1,0 +1,328 @@
+@charset "UTF-8";
+
+/* 공용 모듈 CSS - common.css */
+
+
+
+/* 공사중 표시 */
+/* body * {
+  outline: 1px dashed red;
+} */
+/* 햄버거버튼 토글시 스크롤 방지 */
+html{
+  overflow: auto;
+}
+html.on{
+  overflow: hidden;
+}
+
+/*********************** 1. 상단영역 ***********************/
+.ibx{
+  max-width: 1900px;
+}
+/* 상단전체겉박스 */
+#top{
+  position: relative;
+  z-index: 2;
+}
+/* 상단전체속박스 */
+.toP {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+/* 로고박스 */
+.logo {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 0 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.432);
+}
+.logo img {
+  height: 75px;
+}
+/* GNB영역 */
+
+.gnb>ul {
+  display: flex;
+  justify-content: center;
+  gap: 0 45px;
+  transition: background-color  .4s;
+}
+.gnb>ul>li{
+  /* li에 클래스 "on"시 부모자격 */
+  position: relative;
+  padding: 7px 0;
+}
+
+/* GNB li에 클래스 "on"주기 
+js로 마우스 오버시 */
+.gnb>ul>li.on::before{
+  content: '';
+  position: absolute;
+  bottom: 24%;
+  width: 0;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  z-index: 9999;
+
+  /* 애니메이션 */
+  animation: li_on .25s linear forwards;
+}
+@keyframes li_on {
+  to{
+    width: 100%;
+  }
+} /* li_on 키프레임 */
+
+/* GNB li에 클래스 "on2" 주기 
+js로 마우스 아웃시 */
+.gnb>ul>li.on2::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 24%;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  z-index: 9999;
+
+  /* 애니메이션 */
+  animation: li_on2 .25s linear forwards;
+}
+@keyframes li_on2 {
+  to{
+    width: 0%;
+  }
+} /* li_on2 키프레임 */
+
+.gnb>ul>li>a{
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px #262626;
+  font-weight: 500;
+}
+.gnb:hover ul{
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.432);
+} 
+.gnb:hover ul>li>a{
+  text-shadow: none;
+  color: rgb(0, 0, 0);
+  transition: .2s;
+}
+
+
+.gnb>ul>li:nth-child(2){
+  position: relative;
+  /* .smenu 부모자격 */
+}
+
+/* GNB밑 서브메뉴 */
+.smenu{
+  position: absolute;
+  width: 80px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  /* z-index: 999; */
+
+  /* 숨기기장치 */
+  height: 0;
+  opacity: 0;
+  /* hidden을 주지않으면 글자먼저 등장함 */
+  overflow: hidden;
+  /* 트랜지션 */
+  transition:  .4s ease-in-out;
+  box-shadow: -1px 1px 2px  rgba(0, 0, 0, 0.432),
+  1px 1px 2px  rgba(0, 0, 0, 0.432);
+}
+.smenu ol{
+  text-align: center;
+}
+
+.smenu>ol>li{
+  line-height: 26px;
+  font-size: 1.3rem;
+  color: rgb(58, 58, 58);
+}
+.smenu li:hover {
+  background-color: #e4e4e492;
+}
+
+
+/* 상단 탑메뉴 아이콘 박스 */
+.tmenu{
+  /* 원하는 요소에 max-width값을 주려면 
+  부모요소에 max-width를 주고 마영오를 해야한다 
+  포지션을 줘야 마영오나 크기값이 먹는다!! */
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
+}
+.tmenu ul{
+  position: absolute;
+  top: 3vh;
+  right: 5vh;
+  /* 플렉스박스 */
+  display: flex;
+  gap: 17px;
+}
+.tmenu a{
+  font-size: 20px;
+}
+/* 햄버거 버튼 미디어쿼리 1200px에서 나옴 */
+.tmenu ul .ham{
+  position: fixed;
+  top: 3.2vh;
+  width: 20px;
+  height: 20px;
+  /* background-color: #000; */
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+}
+.ham span{
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  border-radius: 1px;
+  transition: .3s;
+}
+/* 햄버거 span 초기셋팅 */
+.ham span:nth-child(1){
+  top: 0px;
+}
+.ham span:nth-child(2){
+  top: 7px;
+}
+.ham span:nth-child(3){
+  top: 14px;
+}
+/* 햄버거 클래스 on 추가시 */
+.ham.on span:nth-child(1){
+  transform: rotate(45deg);
+  top: 7px;
+}
+.ham.on span:nth-child(2){
+  width: 0;
+}
+.ham.on span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 7px;
+}
+
+/* 어카운트 박스 */
+.account{
+  visibility: hidden;
+}
+
+/* 상단이동버튼 */
+.move_top{
+  position: fixed;
+  top: 80vh;
+  right: 5vw;
+  width: 30px;
+  height: 30px;
+  /* font-size: 40px; */
+  visibility: hidden;
+  opacity: 0;
+  cursor: pointer;
+}
+.move_top span{
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: .4s ease-in-out;
+}
+.move_top span:nth-child(1){
+  top: 0px;
+}
+.move_top span:nth-child(2){
+  top: 14px;
+  right: 14px;
+  transform: rotate(90deg);
+}
+.move_top span:nth-child(3){
+  top: 14px;
+  left: 14px;
+  transform: rotate(-90deg);
+}
+.move_top span:nth-child(4){
+  top: 28px;
+}
+/* 마우스오버시 */
+.move_top:hover span:nth-child(1){
+  transform: rotate(45deg);
+  left: 14px;
+  width: 20px;
+}
+.move_top:hover span:nth-child(2){
+  transform: rotate(-45deg);
+  top: 0px;
+  right: 9px;
+  width: 20px;
+}
+.move_top:hover span:nth-child(3){
+  transform: rotate(45deg);
+  width: 20px;
+  
+}
+.move_top:hover span:nth-child(4){
+  transform: rotate(-45deg);
+  top: 14px;
+  left: 1px;
+  width: 20px;
+}
+.move_top.on{
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/*********************** 3. 하단영역 ***********************/
+.info {
+  border-top: 1px solid #cacaca;
+}
+.addbx{
+  position: relative;
+  padding-top: 10px;
+}
+.blogo {
+  position: absolute;
+  transform: translate(2vw, 2vh);
+}
+.blogo img {
+  height: 54px;
+}
+
+.addbx>address {
+  /* background-color: yellow; */
+  /* transform: translateY(84%); */
+  padding: 50px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #c0c0c0;
+  /* address요소 기본 이탤릭해제 */
+  font-style: normal;
+  line-height: 20px;
+}
+.blink {
+  margin: 8px 0;
+}
+.blink a {
+  margin: 0 12px;
+  color: #c0c0c0;
+}

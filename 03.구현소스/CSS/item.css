@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* 외부CSS합치기 */
+@import url(./common.css);
+@import url(./core.css);
+
+
+
+.main_top{
+  padding-top: 160px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 메인 타이틀 넣기 */
+.location{
+  display: flex;
+  padding-left: 50px;
+  font-size: 1.2rem;
+}
+/* 첫번째 li (HOME /)에 컬러넣기 */
+.location li:first-child{
+  color: rgb(114, 114, 114);
+}
+.item_tit{
+  padding: 20px 0 50px;
+  text-align: center;
+  font-size: 2.9rem;
+  font-weight: 500;
+}
+/* 메인 그리드영역 */
+.gridbx {
+  display: grid;
+  padding: 0 50px 100px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 40px;
+}
+/* 스크롤 등장액션 클래스 */
+.item{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+/* 등장클래스+.on */
+.item.on{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* 이미지 공통속박스 */
+.iimg {
+  position: relative;
+  aspect-ratio: 280 / 400;
+} 
+/* 아이템 공통 이미지 */
+.iimg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* 처음에 display:none 을 줘 안보이게함 */
+  /* display: none; */
+  /* opacity: 0; */
+  object-fit: cover;
+  transition: opacity .3s;
+}
+/* 처음에 두번째이미지 숨기기 */
+.iimg img:last-child{
+  opacity: 0;
+}
+
+/* 이미지박스에 마우스 오버시 
+두번째 이미지 보이기 */
+.iimg:hover img:last-child{
+  opacity: 1;
+}
+
+/* 아이템 공통 텍스트겉박스 */
+.itxt {
+  margin: 4px 0;
+  text-align: center;
+}
+/* 아이템 공통 시즌 설명 텍스트 */
+.ssn {
+  font-size: min(13px, 3vw);
+  /* font-family: "Open Sans", sans-serif; */
+}
+/* 아이템 공통 이름 텍스트 */
+.iname1 a {
+  font-size: min(15px, 3vw);
+  /* font-family: "Open Sans", sans-serif; */
+}
+/* 아이템 공통 가격 텍스트 */
+.itxt span {
+  font-size: min(12px, 3vw);
+  /* font-family: "IBM Plex Sans KR", sans-serif; */
+  color: #919191;
+}

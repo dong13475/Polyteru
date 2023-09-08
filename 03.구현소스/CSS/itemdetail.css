@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+/* 외부CSS합치기 */
+@import url(./common.css);
+@import url(./core.css);
+
+/* 셀렉터박스 */
+.size-select select {
+  padding: 10px;
+  font-size: 1.6rem;
+  /* border-radius: 4px; */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.size-select select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.size-select select option:first-child {
+  color: rgb(151, 151, 151);
+}
+
+/* 빈공간박스 */
+/* .blank{
+  margin-top: 100px;
+  position: relative;
+  height: 50px;
+  width: 100%;
+} */
+
+/* 전체박스 */
+.main_top{
+  padding-top: 160px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* 전체 플렉스 박스 */
+.item_list>ul{
+  display: flex;
+  flex: 1;
+}
+/* 플렉스 섹션 1 */
+.sec1{
+  width: 50%;
+  position: relative;
+  /* background-color: lightcoral; */
+}
+/* 섹션1 페이드 박스 */
+.stk_bx{
+  position: relative;
+  height: 100%;
+  bottom: 700px;
+}
+/* 페이드 속박스 */
+.fade{
+  position: sticky;
+  top: 200px;
+  bottom: 200px;
+}
+.fade li{
+  width: min(35vw,400px);
+  position: absolute;
+  /* 처음에 투명 */
+  opacity: 0;
+  /* 트랜지션 */
+  transition: opacity .8s ease-in-out;
+  aspect-ratio: 280/400;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* 페이드에 .on시 */
+.fade li.on{
+  opacity: 1;
+}
+.fade>li>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 플렉스 섹션 2 */
+.sec2{
+  width: 50%;
+  /* background-color: lightblue; */
+}
+/* sec2 안에 두번째 li 글자색 변경 */
+.sec2 li:last-child{
+  color: #acacac;
+}
+/* 섹션 2 속박스 */
+.sec2_detail{
+  padding-left: 60px;
+}
+/* 아이템 제목 */
+.sec2_detail>h2{
+  padding-top: 50px;
+  font-size: 2rem;
+}
+/* 아이템 가격 */
+.sec2_detail>h3{
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+/* 적립금 */
+.point{
+  display: flex;
+  gap: 114px;
+  padding: 10px 0;
+}
+.point li:first-child{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.point li:last-child{
+  font-size: 1.3rem;
+  padding-top: 4px;
+}
+/* 배송비 */
+.shipping{
+  display: flex;
+  gap: 114px;
+  padding: 10px 0;
+}
+.shipping li:first-child{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.shipping li:last-child{
+  font-size: 1.4rem;
+}
+/* 수량 조건 */
+.count{
+  display: flex;
+  gap: 97px;
+  padding: 10px 0;
+}
+.count li:first-child{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.count li:last-child{
+  font-size: 1.4rem;
+}
+/* 사이즈 타이틀 */
+.sizetit{
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding: 15px 0;
+}
+/* 사이즈 선택박스 */
+.size_bx{
+  outline: 1px solid #000;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 40px;
+}
+/* 주문수량 */
+.scount{
+  display: flex;
+  gap: 97px;
+  padding: 15px 0;
+}
+.scount li:first-child{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.scount li:last-child{
+  font-size: 1.4rem;
+}
+/* 총 상품 금액 */
+.total{
+  display: flex;
+  gap: 80px;
+  /* padding: 15px 0; */
+}
+.total li:first-child{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.total li:last-child{
+  font-size: 1.4rem;
+}
+/* 구매 / 장바구니 버튼 */
+.buy{
+  display: flex;
+  gap: 30px;
+  font-size: 1.7rem;
+  padding: 20px 0;
+}
+/* 구매박스 */
+.buying{
+  background-color: #000;
+  color: #fff;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+/* 장바구니박스 */
+.cart{
+  background-color: #fff;
+  outline: 1px solid #000;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 상품 설명 텍스트 */
+/* 상품 상세 이미지 */
+.main_dimg{
+  margin-top: 100px;
+}
+.mimg{
+  width: min(35vw,400px);
+  aspect-ratio: 280/400;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+.mimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding-bottom: 100px;
+}
